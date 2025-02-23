@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@300;400;700&display=swap');
+
+/* 🎃 General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    /* 🕸️ Title Font (Spooky Vibes) */
+    h1, h2, h3 {
+        font-family: 'Creepster', cursive;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    /* 🎃 Black Title Text */
+    h1, h2, h3 {
+        color: rgb(0, 0, 0);
+    }
+}
+
+
+/* 🕸️ Dark Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Keeps the dark shade */
+    z-index: -1;
+}
+
+/* 🏷️ Header - Fixed & Enlarged */
+.main-header {
+    background-color: #ff6600;
+    /* padding: 20px; */
+    text-align: center;
+    /* font-size: 22px; */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.main-header nav a {
+    /* font-size: 22px; */
+    /* padding: 12px 18px; */
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.main-header nav a:hover {
+    color: white;
+}
+
+/* 🎃 Main Container */
+.container {
+    padding-top: 100px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* 🎃 Banner */
+.banner {
+    background: #ff6600;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* 🔥 Make these specific texts black */
+.banner h1,  /* Welcome to Where’s The Candy? */
+.banner p a, /* 🎃 View the Trick-or-Treat Map | 👻 Join the Spooky Community | 🕵️‍♂️ View Your Profile */
+.community-highlights a.bottom-link, /* Check Events Join the Community Now! */
+.extra-content a.bottom-link, /* Read More */
+.featured-events a.bottom-link, /* Check Events */
+.spooky-stories a.bottom-link { /* Read More */
+    color: black;
+}
+
+/* 🎃 Main Layout */
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* 🎃 Side Sections */
+.content-block {
+    background: #ff6600;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    margin-bottom: 20px;
+    opacity: 0.85;
+}
+
+/* 🎃 Make Titles Black */
+h2, h3 {
+    color: black;
+}
+
+/* 🎃 Remove Bullet Points from Lists */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* 🎃 Fix Community Highlights */
+.community-highlights {
+    flex: 2;
+}
+
+/* 🎃 Spooky Stories & Halloween Events Now Have Blocks */
+.spooky-stories,
+.halloween-events {
+    background: #ff6600;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* 🎃 Decorations Section */
+.top-decorations {
+    background: #ff6600;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* 🎃 Decorations Images */
+.decorations-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.decorations-gallery img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ff6600;
+    transition: transform 0.3s ease-in-out;
+}
+
+.decorations-gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* 🎃 Links */
+a {
+    text-decoration: none; /* Remove underline */
+    color: white;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+/* 🎃 Soft Highlight Effect on Hover */
+a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: yellow;
+}
+
+/* 🎃 Responsive Design */
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    
+    .content-block {
+        width: 100%;
+    }
+
+    .decorations-gallery img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* 👻 Import Keyframes for Fade-In Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 0.85;
+        transform: translateY(0);
+    }
+}
+
+/* 🎃 Animate Content Blocks */
+.latest-updates,
+.community-highlights,
+.spooky-stories,
+.featured-events,
+.top-decorations {
+    animation: fadeIn 1s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* ✨ Staggered Animation Delay */
+.latest-updates {
+    animation-delay: 0.3s;
+}
+
+.community-highlights {
+    animation-delay: 0.6s;
+}
+
+.spooky-stories {
+    animation-delay: 0.9s;
+}
+
+.featured-events {
+    animation-delay: 1.2s;
+}
+
+.top-decorations {
+    animation-delay: 1.5s;
+}
+
+/* 🎭 Add a Hover Effect */
+.latest-updates:hover,
+.community-highlights:hover,
+.spooky-stories:hover,
+.halloween-events:hover,
+.top-decorations:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+}
